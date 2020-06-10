@@ -4,49 +4,51 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-Getblock	mmanager.cpp	/^char* MM::Getblock(mmanager** pMmanager){$/;"	f	class:MM	signature:(mmanager** pMmanager)
+ERR	mmanager.h	22;"	d
+Getblock	mmanager.cpp	/^memblock*  MM::Getblock(){$/;"	f	class:MM	signature:()
 Getblock	mmanager.h	/^		char* Getblock(mmanager** pMmanager);$/;"	p	class:MM	access:public	signature:(mmanager** pMmanager)
 MM	mmanager.cpp	/^MM::MM(int num , int blocksize){$/;"	f	class:MM	signature:(int num , int blocksize)
 MM	mmanager.h	/^		MM(int num,int blocksize); \/\/构造函数中创建内存池$/;"	p	class:MM	access:public	signature:(int num,int blocksize)
 MM	mmanager.h	/^class MM{$/;"	c
-MM::Getblock	mmanager.cpp	/^char* MM::Getblock(mmanager** pMmanager){$/;"	f	class:MM	signature:(mmanager** pMmanager)
+MM::Getblock	mmanager.cpp	/^memblock*  MM::Getblock(){$/;"	f	class:MM	signature:()
 MM::Getblock	mmanager.h	/^		char* Getblock(mmanager** pMmanager);$/;"	p	class:MM	access:public	signature:(mmanager** pMmanager)
 MM::MM	mmanager.cpp	/^MM::MM(int num , int blocksize){$/;"	f	class:MM	signature:(int num , int blocksize)
 MM::MM	mmanager.h	/^		MM(int num,int blocksize); \/\/构造函数中创建内存池$/;"	p	class:MM	access:public	signature:(int num,int blocksize)
-MM::Releaseblock	mmanager.cpp	/^int MM::Releaseblock(mmanager** pManager){$/;"	f	class:MM	signature:(mmanager** pManager)
+MM::Releaseblock	mmanager.cpp	/^int MM::Releaseblock(memblock* pmemblock){$/;"	f	class:MM	signature:(memblock* pmemblock)
 MM::Releaseblock	mmanager.h	/^		int Releaseblock(mmanager** pMmanager);$/;"	p	class:MM	access:public	signature:(mmanager** pMmanager)
 MM::pMmanager	mmanager.h	/^		mmanager * pMmanager;$/;"	m	class:MM	access:public
 MM::~MM	mmanager.cpp	/^MM::~MM(){$/;"	f	class:MM	signature:()
 MM::~MM	mmanager.h	/^		~MM();\/\/析构函数中销毁内存池$/;"	p	class:MM	access:public	signature:()
 MMANAGER_H	mmanager.h	13;"	d
-Releaseblock	mmanager.cpp	/^int MM::Releaseblock(mmanager** pManager){$/;"	f	class:MM	signature:(mmanager** pManager)
+OK	mmanager.h	21;"	d
+Releaseblock	mmanager.cpp	/^int MM::Releaseblock(memblock* pmemblock){$/;"	f	class:MM	signature:(memblock* pmemblock)
 Releaseblock	mmanager.h	/^		int Releaseblock(mmanager** pMmanager);$/;"	p	class:MM	access:public	signature:(mmanager** pMmanager)
 blockSize	mmanager.h	19;"	d
-blocksize	mmanager.h	/^		int blocksize ; \/\/内存块的大小$/;"	m	struct:node2	access:public
+blocknum	mmanager.h	/^	int blocknum;  \/\/内存块的编号$/;"	m	struct:node	access:public
+blocksize	mmanager.h	/^		int blocksize ; \/\/每个内存块对应的存储空间的大小$/;"	m	struct:node2	access:public
 count	mmanager.h	/^		int count ; \/\/block个数$/;"	m	struct:node2	access:public
-firstaddr	mmanager.h	/^		char* firstaddr; \/\/开始地址$/;"	m	struct:node2	access:public
-lastaddr	mmanager.h	/^		char* lastaddr ; \/\/结束地址$/;"	m	struct:node2	access:public
+firstaddr	mmanager.h	/^		char* firstaddr; \/\/块起始地址$/;"	m	struct:node2	access:public
+lastaddr	mmanager.h	/^		char* lastaddr ; \/\/块结束地址$/;"	m	struct:node2	access:public
 main	testmm.c	/^int main(){$/;"	f
 main	thread_create.cpp	/^int main(int argc,char** argv){$/;"	f	signature:(int argc,char** argv)
 memblock	mmanager.h	/^}memblock;$/;"	t	typeref:struct:node
 mmanager	mmanager.h	/^}mmanager;$/;"	t	typeref:struct:node2
 node	mmanager.h	/^typedef struct node{$/;"	s
 node2	mmanager.h	/^typedef struct node2{$/;"	s
-node2::blocksize	mmanager.h	/^		int blocksize ; \/\/内存块的大小$/;"	m	struct:node2	access:public
+node2::blocksize	mmanager.h	/^		int blocksize ; \/\/每个内存块对应的存储空间的大小$/;"	m	struct:node2	access:public
 node2::count	mmanager.h	/^		int count ; \/\/block个数$/;"	m	struct:node2	access:public
-node2::firstaddr	mmanager.h	/^		char* firstaddr; \/\/开始地址$/;"	m	struct:node2	access:public
-node2::lastaddr	mmanager.h	/^		char* lastaddr ; \/\/结束地址$/;"	m	struct:node2	access:public
-node2::pHead	mmanager.h	/^		memblock* pHead ; \/\/链表头$/;"	m	struct:node2	access:public
-node2::pTail	mmanager.h	/^		memblock* pTail ; \/\/链表尾$/;"	m	struct:node2	access:public
-node2::usedCount	mmanager.h	/^		int usedCount ; \/\/使用的block个数$/;"	m	struct:node2	access:public
-node::pMem	mmanager.h	/^	char* pMem;$/;"	m	struct:node	access:public
-node::pNext	mmanager.h	/^	struct node* pNext;$/;"	m	struct:node	typeref:struct:node::node	access:public
-pHead	mmanager.h	/^		memblock* pHead ; \/\/链表头$/;"	m	struct:node2	access:public
-pMem	mmanager.h	/^	char* pMem;$/;"	m	struct:node	access:public
+node2::firstaddr	mmanager.h	/^		char* firstaddr; \/\/块起始地址$/;"	m	struct:node2	access:public
+node2::lastaddr	mmanager.h	/^		char* lastaddr ; \/\/块结束地址$/;"	m	struct:node2	access:public
+node2::pHead	mmanager.h	/^		memblock* pHead ; \/\/链表头用于写入数据$/;"	m	struct:node2	access:public
+node2::usedCount	mmanager.h	/^		int usedCount ; \/\/已使用的block个数$/;"	m	struct:node2	access:public
+node::blocknum	mmanager.h	/^	int blocknum;  \/\/内存块的编号$/;"	m	struct:node	access:public
+node::pMem	mmanager.h	/^	char* pMem;	\/\/指向内存块存储空间的指针$/;"	m	struct:node	access:public
+node::pNext	mmanager.h	/^	struct node* pNext;     \/\/此类型节点的指针$/;"	m	struct:node	typeref:struct:node::node	access:public
+pHead	mmanager.h	/^		memblock* pHead ; \/\/链表头用于写入数据$/;"	m	struct:node2	access:public
+pMem	mmanager.h	/^	char* pMem;	\/\/指向内存块存储空间的指针$/;"	m	struct:node	access:public
 pMmanager	mmanager.h	/^		mmanager * pMmanager;$/;"	m	class:MM	access:public
-pNext	mmanager.h	/^	struct node* pNext;$/;"	m	struct:node	typeref:struct:node::node	access:public
-pTail	mmanager.h	/^		memblock* pTail ; \/\/链表尾$/;"	m	struct:node2	access:public
+pNext	mmanager.h	/^	struct node* pNext;     \/\/此类型节点的指针$/;"	m	struct:node	typeref:struct:node::node	access:public
 start_thread	thread_create.cpp	/^static void* start_thread(void* arg){$/;"	f	file:	signature:(void* arg)
-usedCount	mmanager.h	/^		int usedCount ; \/\/使用的block个数$/;"	m	struct:node2	access:public
+usedCount	mmanager.h	/^		int usedCount ; \/\/已使用的block个数$/;"	m	struct:node2	access:public
 ~MM	mmanager.cpp	/^MM::~MM(){$/;"	f	class:MM	signature:()
 ~MM	mmanager.h	/^		~MM();\/\/析构函数中销毁内存池$/;"	p	class:MM	access:public	signature:()

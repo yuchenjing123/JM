@@ -49,21 +49,20 @@ MM::MM(int num , int blocksize){
 	}
 	memset(block,0,blocksize);
 	temp1->pMem = block;
+	temp1->blocknum = 0;  //块编号从0开始
 	this->pMmanager->firstaddr = block;
 	temp2 = temp1;
 	
 	//继续增加block
 	while(n< num){
 		
-			n = n+1;
-			if(n==1){	//如果只有一个节点，将链表头和尾都指向block1
+			n = n+1;  //n此时表示第几个块
+			if(n==1){	//如果只有一个节点，将链表头指向block1
 				this->pMmanager->pHead = temp1;
 				temp2->pNext = NULL;
-				this->pMmanager->pTail = temp1;
 			}
 			else{
 				temp2->pNext = temp1;
-				this->pMmanager->pTail = temp1;
 			} 
 			temp2 = temp1;
 			//temp1用于创建，temp2用于保存上次的节点地址
@@ -83,12 +82,13 @@ MM::MM(int num , int blocksize){
 			
 			}
 
+
 			memset(block,0,blocksize);
 			temp1->pMem = block;
+			temp1->blocknum = n-1;
 			
 	}
 
-	this->pMmanager->pTail = temp2;
 	temp2->pNext = NULL;
 	this->pMmanager->lastaddr = temp2->pMem+blocksize;
 
@@ -112,20 +112,39 @@ MM::~MM(){
 		free(p2);
 	}
 	this->pMmanager->pHead = NULL;
-	this->pMmanager->pTail = NULL;
+	this->pMmanager->pHead2 = NULL;
 	free(this->pMmanager);
 	this->pMmanager = NULL;
 }
 
-char* MM::Getblock(mmanager** pMmanager){
-	if((*pMmanager)==NULL) return NULL;
-	
-
+memblock*  MM::Getblock(){
+	if((this->pMmanager)==NULL) return NULL;
+	if(this->pMmanager->usedCount == this->pMmanager->count){
+		printf("get block err ! pool Full\n");
+		return NULL;
+	}	
+	if(this->pMmanager== NULL || this->pMmanager->pHead == NULL){
+		printf("pool empty\n");
+		return NULL;
+	}
+	memblock* p = this->pMmanager->pHead;
+	this->pMmanager->pHead = p->pNext;
+	p->pNext= NULL;
+	this->pMmanager->usedCount++;
+	return p;
 }
 
-int MM::Releaseblock(mmanager** pManager){
-	if((*pMmanager)==NULL) return NULL;
-
-
+int MM::Releaseblock(memblock* pmemblock){
+	if( pmemblock == NULL){
+		printf("have no memeryblock\n");
+		return ERR;
+	}
+	if( pmemblock->pMem == NULL){
+		printf("have no memory space \n");
+		return ERR;
+	}
+	free(pmemblock->pMem);
+	free(pmemblock);
+	return OK;  //OK代表释放成功
 
 }

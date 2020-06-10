@@ -18,21 +18,24 @@
 
 #define blockSize sizeof(memblock)
 
+#define OK 1     //操作成功
+#define ERR 0	 //操作失败
 
 typedef struct node{
-	char* pMem;
-	struct node* pNext;
+	int blocknum;  //内存块的编号
+	char* pMem;	//指向内存块存储空间的指针
+	struct node* pNext;     //此类型节点的指针
 
 }memblock;
 
 typedef struct node2{
 		int count ; //block个数
-		int usedCount ; //使用的block个数
-		int blocksize ; //内存块的大小
-		char* firstaddr; //开始地址
-		char* lastaddr ; //结束地址
-		memblock* pHead ; //链表头
-		memblock* pTail ; //链表尾
+		int usedCount ; //已使用的block个数
+		int blocksize ; //每个内存块对应的存储空间的大小
+		char* firstaddr; //块起始地址
+		char* lastaddr ; //块结束地址
+		memblock* pHead ; //链表头用于写入数据
+		
 }mmanager;
 
 class MM{
