@@ -9,7 +9,7 @@
  *        Company:  
  * ************************************************************************/
 
-#include "mmanager.h"
+#include "./mmanager.h"
 
 MM::MM(int num , int blocksize){
 	//初始化内存管理节点
@@ -112,7 +112,6 @@ MM::~MM(){
 		free(p2);
 	}
 	this->pMmanager->pHead = NULL;
-	this->pMmanager->pHead2 = NULL;
 	free(this->pMmanager);
 	this->pMmanager = NULL;
 }
@@ -143,7 +142,10 @@ int MM::Releaseblock(memblock* pmemblock){
 		printf("have no memory space \n");
 		return ERR;
 	}
+
+	if(pmemblock->pMem)
 	free(pmemblock->pMem);
+	if(pmemblock)
 	free(pmemblock);
 	return OK;  //OK代表释放成功
 

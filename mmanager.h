@@ -16,7 +16,7 @@
 #include <stdlib.h>
 #include "string.h"
 
-#define blockSize sizeof(memblock)
+#define LEN sizeof(memblock)
 
 #define OK 1     //操作成功
 #define ERR 0	 //操作失败
@@ -44,8 +44,8 @@ class MM{
 		~MM();//析构函数中销毁内存池
 	public:
 		mmanager * pMmanager;
-		char* Getblock(mmanager** pMmanager);
-		int Releaseblock(mmanager** pMmanager);
+		memblock* Getblock();
+		int Releaseblock(memblock* pmemblock);
 		
 };
 

@@ -6,30 +6,30 @@
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 ERR	mmanager.h	22;"	d
 Getblock	mmanager.cpp	/^memblock*  MM::Getblock(){$/;"	f	class:MM	signature:()
-Getblock	mmanager.h	/^		char* Getblock(mmanager** pMmanager);$/;"	p	class:MM	access:public	signature:(mmanager** pMmanager)
+Getblock	mmanager.h	/^		memblock* Getblock();$/;"	p	class:MM	access:public	signature:()
+LEN	mmanager.h	19;"	d
 MM	mmanager.cpp	/^MM::MM(int num , int blocksize){$/;"	f	class:MM	signature:(int num , int blocksize)
 MM	mmanager.h	/^		MM(int num,int blocksize); \/\/构造函数中创建内存池$/;"	p	class:MM	access:public	signature:(int num,int blocksize)
 MM	mmanager.h	/^class MM{$/;"	c
 MM::Getblock	mmanager.cpp	/^memblock*  MM::Getblock(){$/;"	f	class:MM	signature:()
-MM::Getblock	mmanager.h	/^		char* Getblock(mmanager** pMmanager);$/;"	p	class:MM	access:public	signature:(mmanager** pMmanager)
+MM::Getblock	mmanager.h	/^		memblock* Getblock();$/;"	p	class:MM	access:public	signature:()
 MM::MM	mmanager.cpp	/^MM::MM(int num , int blocksize){$/;"	f	class:MM	signature:(int num , int blocksize)
 MM::MM	mmanager.h	/^		MM(int num,int blocksize); \/\/构造函数中创建内存池$/;"	p	class:MM	access:public	signature:(int num,int blocksize)
 MM::Releaseblock	mmanager.cpp	/^int MM::Releaseblock(memblock* pmemblock){$/;"	f	class:MM	signature:(memblock* pmemblock)
-MM::Releaseblock	mmanager.h	/^		int Releaseblock(mmanager** pMmanager);$/;"	p	class:MM	access:public	signature:(mmanager** pMmanager)
+MM::Releaseblock	mmanager.h	/^		int Releaseblock(memblock* pmemblock);$/;"	p	class:MM	access:public	signature:(memblock* pmemblock)
 MM::pMmanager	mmanager.h	/^		mmanager * pMmanager;$/;"	m	class:MM	access:public
 MM::~MM	mmanager.cpp	/^MM::~MM(){$/;"	f	class:MM	signature:()
 MM::~MM	mmanager.h	/^		~MM();\/\/析构函数中销毁内存池$/;"	p	class:MM	access:public	signature:()
 MMANAGER_H	mmanager.h	13;"	d
 OK	mmanager.h	21;"	d
 Releaseblock	mmanager.cpp	/^int MM::Releaseblock(memblock* pmemblock){$/;"	f	class:MM	signature:(memblock* pmemblock)
-Releaseblock	mmanager.h	/^		int Releaseblock(mmanager** pMmanager);$/;"	p	class:MM	access:public	signature:(mmanager** pMmanager)
-blockSize	mmanager.h	19;"	d
+Releaseblock	mmanager.h	/^		int Releaseblock(memblock* pmemblock);$/;"	p	class:MM	access:public	signature:(memblock* pmemblock)
 blocknum	mmanager.h	/^	int blocknum;  \/\/内存块的编号$/;"	m	struct:node	access:public
 blocksize	mmanager.h	/^		int blocksize ; \/\/每个内存块对应的存储空间的大小$/;"	m	struct:node2	access:public
 count	mmanager.h	/^		int count ; \/\/block个数$/;"	m	struct:node2	access:public
 firstaddr	mmanager.h	/^		char* firstaddr; \/\/块起始地址$/;"	m	struct:node2	access:public
 lastaddr	mmanager.h	/^		char* lastaddr ; \/\/块结束地址$/;"	m	struct:node2	access:public
-main	testmm.c	/^int main(){$/;"	f
+main	testmm.cpp	/^int main(){$/;"	f	signature:()
 main	thread_create.cpp	/^int main(int argc,char** argv){$/;"	f	signature:(int argc,char** argv)
 memblock	mmanager.h	/^}memblock;$/;"	t	typeref:struct:node
 mmanager	mmanager.h	/^}mmanager;$/;"	t	typeref:struct:node2
