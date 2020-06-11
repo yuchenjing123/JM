@@ -31,7 +31,11 @@ blocksize	mmanager.h	/^		int blocksize ; \/\/每个内存块对应的存储空�
 count	mmanager.h	/^		int count ; \/\/block个数$/;"	m	struct:node2	access:public
 filesize	yuvrw.cpp	/^long filesize(FILE* pFile){$/;"	f	signature:(FILE* pFile)
 firstaddr	mmanager.h	/^		char* firstaddr; \/\/块起始地址$/;"	m	struct:node2	access:public
+get_thread_policy	sched_policy.cpp	/^static int get_thread_policy(pthread_attr_t& attr){$/;"	f	file:	signature:(pthread_attr_t& attr)
+get_thread_policy	thread_create.cpp	/^static int get_thread_policy(pthread_attr_t& attr){$/;"	f	file:	signature:(pthread_attr_t& attr)
+get_thread_priority	sched_policy.cpp	/^static int get_thread_priority(pthread_attr_t& attr){$/;"	f	file:	signature:(pthread_attr_t& attr)
 lastaddr	mmanager.h	/^		char* lastaddr ; \/\/块结束地址$/;"	m	struct:node2	access:public
+main	sched_policy.cpp	/^int main(){$/;"	f	signature:()
 main	testmm.cpp	/^int main(){$/;"	f	signature:()
 main	thread_create.cpp	/^int main(int argc,char** argv){$/;"	f	signature:(int argc,char** argv)
 main	yuvrw.cpp	/^int main(int argc,char** argv){$/;"	f	signature:(int argc,char** argv)
@@ -60,6 +64,9 @@ pMmanager	mmanager.h	/^		mmanager * pMmanager;$/;"	m	class:MM	access:public
 pNext	mmanager.h	/^	struct node* pNext;     \/\/此类型节点的指针$/;"	m	struct:node	typeref:struct:node::node	access:public
 pNext	yuvrw.cpp	/^	struct node* pNext;$/;"	m	struct:node	typeref:struct:node::node	file:	access:public
 r_thread	yuvrw.cpp	/^static void* r_thread(void* arg){$/;"	f	file:	signature:(void* arg)
+set_thread_policy	sched_policy.cpp	/^static void set_thread_policy(pthread_attr_t& attr,int policy){$/;"	f	file:	signature:(pthread_attr_t& attr,int policy)
+set_thread_policy	thread_create.cpp	/^static void set_thread_policy(pthread_attr_t& attr,int policy){$/;"	f	file:	signature:(pthread_attr_t& attr,int policy)
+show_thread_priority	sched_policy.cpp	/^static void show_thread_priority(pthread_attr_t& attr,int policy){$/;"	f	file:	signature:(pthread_attr_t& attr,int policy)
 start_thread	thread_create.cpp	/^static void* start_thread(void* arg){$/;"	f	file:	signature:(void* arg)
 usedCount	mmanager.h	/^		int usedCount ; \/\/已使用的block个数$/;"	m	struct:node2	access:public
 w_thread	yuvrw.cpp	/^static void* w_thread(void* arg){$/;"	f	file:	signature:(void* arg)
