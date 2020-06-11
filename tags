@@ -7,7 +7,7 @@
 ERR	mmanager.h	22;"	d
 Getblock	mmanager.cpp	/^memblock*  MM::Getblock(){$/;"	f	class:MM	signature:()
 Getblock	mmanager.h	/^		memblock* Getblock();$/;"	p	class:MM	access:public	signature:()
-ImageSize	yuvrw.cpp	19;"	d	file:
+ImageSize	yuvrw.cpp	22;"	d	file:
 LEN	mmanager.h	19;"	d
 MM	mmanager.cpp	/^MM::MM(int num , int blocksize){$/;"	f	class:MM	signature:(int num , int blocksize)
 MM	mmanager.h	/^		MM(int num,int blocksize); \/\/构造函数中创建内存池$/;"	p	class:MM	access:public	signature:(int num,int blocksize)
@@ -33,7 +33,9 @@ filesize	yuvrw.cpp	/^long filesize(FILE* pFile){$/;"	f	signature:(FILE* pFile)
 firstaddr	mmanager.h	/^		char* firstaddr; \/\/块起始地址$/;"	m	struct:node2	access:public
 get_thread_policy	sched_policy.cpp	/^static int get_thread_policy(pthread_attr_t& attr){$/;"	f	file:	signature:(pthread_attr_t& attr)
 get_thread_policy	thread_create.cpp	/^static int get_thread_policy(pthread_attr_t& attr){$/;"	f	file:	signature:(pthread_attr_t& attr)
+get_thread_policy	yuvrw.cpp	/^static int get_thread_policy(pthread_attr_t& attr){$/;"	f	file:	signature:(pthread_attr_t& attr)
 get_thread_priority	sched_policy.cpp	/^static int get_thread_priority(pthread_attr_t& attr){$/;"	f	file:	signature:(pthread_attr_t& attr)
+getdir_filenum	yuvrw.cpp	/^int getdir_filenum()$/;"	f	signature:()
 lastaddr	mmanager.h	/^		char* lastaddr ; \/\/块结束地址$/;"	m	struct:node2	access:public
 main	direnttest.cpp	/^int main(){$/;"	f	signature:()
 main	sched_policy.cpp	/^int main(){$/;"	f	signature:()
@@ -67,9 +69,10 @@ pNext	yuvrw.cpp	/^	struct node* pNext;$/;"	m	struct:node	typeref:struct:node::no
 r_thread	yuvrw.cpp	/^static void* r_thread(void* arg){$/;"	f	file:	signature:(void* arg)
 set_thread_policy	sched_policy.cpp	/^static void set_thread_policy(pthread_attr_t& attr,int policy){$/;"	f	file:	signature:(pthread_attr_t& attr,int policy)
 set_thread_policy	thread_create.cpp	/^static void set_thread_policy(pthread_attr_t& attr,int policy){$/;"	f	file:	signature:(pthread_attr_t& attr,int policy)
+set_thread_policy	yuvrw.cpp	/^static void set_thread_policy(pthread_attr_t& attr,int policy){$/;"	f	file:	signature:(pthread_attr_t& attr,int policy)
 show_thread_priority	sched_policy.cpp	/^static void show_thread_priority(pthread_attr_t& attr,int policy){$/;"	f	file:	signature:(pthread_attr_t& attr,int policy)
 start_thread	thread_create.cpp	/^static void* start_thread(void* arg){$/;"	f	file:	signature:(void* arg)
 usedCount	mmanager.h	/^		int usedCount ; \/\/已使用的block个数$/;"	m	struct:node2	access:public
-w_thread	yuvrw.cpp	/^static void* w_thread(void* arg){$/;"	f	file:	signature:(void* arg)
+w_thread	yuvrw.cpp	/^static void* w_thread(void* arg){	$/;"	f	file:	signature:(void* arg)
 ~MM	mmanager.cpp	/^MM::~MM(){$/;"	f	class:MM	signature:()
 ~MM	mmanager.h	/^		~MM();\/\/析构函数中销毁内存池$/;"	p	class:MM	access:public	signature:()
