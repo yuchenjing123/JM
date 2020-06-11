@@ -52,11 +52,8 @@ static void* start_thread(void* arg){
 	cout<<"thread start"<<endl;
 	//获取线程属性
 	pthread_attr_t attr;
-	sched_param param;
-
-	int policy;
-	int rs;
-
+	
+	
 
 	get_thread_policy(attr);
 	

@@ -35,6 +35,7 @@ get_thread_policy	sched_policy.cpp	/^static int get_thread_policy(pthread_attr_t
 get_thread_policy	thread_create.cpp	/^static int get_thread_policy(pthread_attr_t& attr){$/;"	f	file:	signature:(pthread_attr_t& attr)
 get_thread_priority	sched_policy.cpp	/^static int get_thread_priority(pthread_attr_t& attr){$/;"	f	file:	signature:(pthread_attr_t& attr)
 lastaddr	mmanager.h	/^		char* lastaddr ; \/\/块结束地址$/;"	m	struct:node2	access:public
+main	direnttest.cpp	/^int main(){$/;"	f	signature:()
 main	sched_policy.cpp	/^int main(){$/;"	f	signature:()
 main	testmm.cpp	/^int main(){$/;"	f	signature:()
 main	thread_create.cpp	/^int main(int argc,char** argv){$/;"	f	signature:(int argc,char** argv)
